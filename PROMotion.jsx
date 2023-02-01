@@ -4,5 +4,4 @@
 
     alert(mainScriptFile.toString() + "\nHello world");
     
-    
 })(this);
