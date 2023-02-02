@@ -1,4 +1,4 @@
-//@include "moduls/readASE.jsx";
+//@include "modules/readASE.jsx";
 
 (function (thisObj) {
 
