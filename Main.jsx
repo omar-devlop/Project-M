@@ -1,8 +1,11 @@
-(function(thisObj) {
+//@include "moduls/readASE.jsx";
+
+(function (thisObj) {
 
     var mainScriptFile = new File($.fileName);
 
-    alert(mainScriptFile.toString() + "\nHello world");
+    alert(mainScriptFile.toString());
 
+    alert(readASE());
 
 })(this);
