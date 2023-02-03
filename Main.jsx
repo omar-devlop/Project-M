@@ -1,25 +1,12 @@
-//@include "modules/readASE.jsx";
-//@include "modules/translations.jsx";
-
-
-var language = "ar";
-
-function getTranslation (key){
-
-    return translations[language][key];
-
-}
-
+//@include "Packages/JSON.jsx";
+//@include "Helpers/Setting.jsx";
+//@include "Helpers/Translations.jsx";
+//@include "Helpers/Functions.jsx";
+//@include "modules/ReadASE.jsx";
 
 
 
 (function (thisObj) {
-
-    var mainScriptFile = new File($.fileName);
-
-    // alert(mainScriptFile.toString());
-
-    // alert(readASE());
 
     alert(getTranslation("Exit"));
 
