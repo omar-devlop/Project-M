@@ -1,5 +1,6 @@
 function GetTranslation(key) {
 
+    // TODO in future update the translation system to be each language in file alone like resources in C#
     return translations[language][key];
 
 }
