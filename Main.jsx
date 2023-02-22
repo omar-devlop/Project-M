@@ -1,8 +1,11 @@
 //@include "Packages/JSON.jsx";
 //@include "Helpers/Setting.jsx";
-//@include "Helpers/Translations.jsx";
 //@include "Helpers/Functions.jsx";
-//@include "modules/ReadASE.jsx";
+//@include "Modules/ReadASE.jsx";
+//@include "Helpers/ResourceManager.jsx";
+
+//@include "Resources/Translations.jsx";
+//@include "Resources/FluentIcons.jsx";
 
 
 function projectM_Func(thisObj) {
@@ -14,11 +17,16 @@ function projectM_Func(thisObj) {
         var minWidth = 200;
         var minHight = 400;
 
+        
+
         var topGroupHeight = 35;
+        
 
         var mainWin = (thisObj instanceof Panel) ? thisObj : new Window("palette", scriptName, undefined, {
             resizeable: true,
         });
+
+        
         mainWin.orientation = "column";
         mainWin.alignChildren = ["fill", "fill"];
         mainWin.spacing = mSpacing;
@@ -53,6 +61,14 @@ function projectM_Func(thisObj) {
         });
         button1.text = "Button";
         button1.alignment = ["fill", "top"];
+
+        var iconbutton1 = mainGroup.add("iconbutton", [0,0,50,50], undefined, {name: "iconbutton1", style: "toolbutton"}); 
+        iconbutton1.icon = Icons("fluent_accessibility_24_filled");
+
+
+        var iconbutton2 = mainGroup.add("iconbutton", [0,0,50,50], undefined, {name: "iconbutton2", style: "toolbutton"}); 
+        iconbutton2.icon = Icons("fluent_accessibility_20_filled");
+
 
         var button2 = mainGroup.add("button", undefined, undefined, {
             name: "button2"

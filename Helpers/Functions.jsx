@@ -7,10 +7,3 @@ function canWrite() {
     alert(scriptName + ' requires access to write files.\n' + 'To allow, please go to Preferences check off "Allow Scripts to Write Files and Access Network" to resolve.');
     return false;
 }
-
-
-function getTranslation(key) {
-
-    return translations[language][key];
-
-}
