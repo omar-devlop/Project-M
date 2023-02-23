@@ -5,7 +5,6 @@
 //@include "Helpers/ResourceManager.jsx";
 
 //@include "Resources/Translations.jsx";
-//@include "Resources/FluentIcons.jsx";
 
 
 function projectM_Func(thisObj) {
@@ -47,6 +46,7 @@ function projectM_Func(thisObj) {
             scriptLogo.size = [75, 25];
         }
 
+    
 
         var mainGroup = mainWin.add("panel", undefined, undefined, {
             name: "panel1"
@@ -56,6 +56,7 @@ function projectM_Func(thisObj) {
         mainGroup.spacing = mSpacing;
         mainGroup.margins = mMargins;
 
+     
         var button1 = mainGroup.add("button", undefined, undefined, {
             name: "button1"
         });
@@ -63,11 +64,11 @@ function projectM_Func(thisObj) {
         button1.alignment = ["fill", "top"];
 
         var iconbutton1 = mainGroup.add("iconbutton", [0,0,50,50], undefined, {name: "iconbutton1", style: "toolbutton"}); 
-        iconbutton1.icon = Icons("fluent_accessibility_24_filled");
+        iconbutton1.icon = Icons("fluent_accessibility_16_filled");
 
 
         var iconbutton2 = mainGroup.add("iconbutton", [0,0,50,50], undefined, {name: "iconbutton2", style: "toolbutton"}); 
-        iconbutton2.icon = Icons("fluent_accessibility_20_filled");
+        iconbutton2.icon = Icons("fluent_add_16_filled");
 
 
         var button2 = mainGroup.add("button", undefined, undefined, {
