@@ -57,16 +57,6 @@ function readJSON(storedFile, folder) {
 
 function buildInterface(thisObj) {
 
-
-    var mSpacing = 3;
-    var mMargins = 3;
-
-    var minWidth = 200;
-    var minHight = 400;
-
-    var topGroupHeight = 35;
-
-
     var mainWin = (thisObj instanceof Panel) ? thisObj : new Window("palette", scriptName, [0, 0, 210, 500], {
         resizeable: false,
     });
@@ -96,8 +86,51 @@ function buildInterface(thisObj) {
     var mainPanel = mainWin.add("group", [5, 40, 205, 490], undefined);
     mainPanel.orientation = "column";
     mainPanel.alignChildren = ["left", "center"];
-    mainPanel.graphics.backgroundColor = mainPanel.graphics.newBrush(mainPanel.graphics.BrushType.SOLID_COLOR, blueColor);
+    mainPanel.graphics.backgroundColor = mainPanel.graphics.newBrush(mainPanel.graphics.BrushType.SOLID_COLOR, defaultBGColor);
 
+    var easePanel = mainPanel.add("group", [0, 0, 200, 80], undefined);
+    easePanel.orientation = "column";
+    easePanel.alignChildren = ["left", "center"];
+    easePanel.graphics.backgroundColor = easePanel.graphics.newBrush(easePanel.graphics.BrushType.SOLID_COLOR, greenColor);
+
+    easeOutBtn = easePanel.add("iconbutton", [5, 5, 25, 25], Icons("fluent_arrow_previous_16_filled"), {
+        style: "toolbutton"
+    });
+    easeInBtn = easePanel.add("iconbutton", [5, 30, 25, 50], Icons("fluent_arrow_next_16_filled"), {
+        style: "toolbutton"
+    });
+    easeBtn = easePanel.add("iconbutton", [5, 55, 25, 75],  Icons("fluent_arrow_swap_16_filled"), {
+        style: "toolbutton"
+    });
+
+    var eS_Size = 20;
+    var eS_Base = (easePanel.size.height - (3 * eS_Size) - 5) / 4;;
+
+    easeOutSlider = easePanel.add("slider", [30, eS_Base, 135, eS_Base + eS_Size], undefined);
+    easeInSlider = easePanel.add("slider", [30, eS_Base * 2 + eS_Size, 135, eS_Base * 2 + eS_Size * 2], undefined);
+    easeSlider = easePanel.add("slider", [30, eS_Base * 3 + eS_Size * 2, 135, eS_Base * 3 + eS_Size * 3], undefined);
+
+    // easeOutAmount = easeSliders.add("edittext", [140, 5, 170, 25], "100");
+    easeOutAmount = easePanel.add('statictext {text: "0", justify: "center"}', [140, 5, 170, 25]);
+   
+    // easeInAmount = easePanel.add("edittext", [140, 30, 170, 50], "100");
+    easeInAmount = easePanel.add('statictext {text: "50", justify: "center"}', [140, 30, 170, 50]);
+
+    // easeAmount = easePanel.add("edittext", [140, 55, 170, 75], "100");
+    easeAmount = easePanel.add('statictext {text: "100", justify: "center"}', [140, 55, 170, 75]);
+
+    var setGr = easeOutAmount.graphics;
+    setGr.foregroundColor = setGr.newPen(setGr.PenType.SOLID_COLOR, blueColor, 1);
+
+    store_Ease_Btn = easePanel.add("iconbutton", [175, 5, 195, 25], Icons("fluent_copy_16_filled"), {
+        style: "toolbutton"
+    });
+    import_Ease_Btn = easePanel.add("iconbutton", [175, 30, 195, 50], Icons("fluent_clipboard_paste_16_filled"), {
+        style: "toolbutton"
+    });
+    stored_Ease_Txt = easePanel.add('statictext {text: "0", justify: "center"}', [175, 55, 195, 75]);
+
+   
 
 
     // var iconbutton1 = mainPanel.add("iconbutton", [0, 0, 50, 50], undefined, {
