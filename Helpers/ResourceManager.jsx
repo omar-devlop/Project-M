@@ -2,9 +2,9 @@ function GetTranslation(key) {
 
     // TODO update translations folder to get the created folder
 
-    var languageFile = readJSON(language, scriptPath + "/Resources/Translations");
+    var translationPhrase =  translations[language][key];
 
-    return languageFile[key];
+    return translationPhrase;
 
 }
 
@@ -12,7 +12,7 @@ function Icons(icon) {
 
     // TODO update icon folder to get the created folder
 
-    var iconPath = scriptPath + "/Resources/FluentIcons/" + icon + ".png";
+    var iconfile = fluentIcons[icon];
 
-    return iconPath;
+    return iconfile;
 }

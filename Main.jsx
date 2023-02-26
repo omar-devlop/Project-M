@@ -2,6 +2,8 @@
 //@include "Helpers/Setting.jsx";
 //@include "Helpers/Functions.jsx";
 //@include "Modules/ReadASE.jsx";
+//@include "Resources/UIElements.jsx";
+//@include "Resources/Translations.jsx";
 //@include "Helpers/ResourceManager.jsx";
 
 
@@ -9,6 +11,7 @@
 function projectM_Func(thisObj) {
     function buildUI(thisObj) {
 
+        alert(GetTranslation("welcomeMessage"));
         var mainWindow = buildInterface(thisObj);
 
         
